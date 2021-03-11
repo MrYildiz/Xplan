@@ -1,0 +1,8 @@
+.navbar{
+    padding-left:150px;
+    padding-right:150px;
+}
+
+.dropdown-toggle, .dropdown-item {
+    cursor: pointer;
+}

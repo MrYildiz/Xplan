@@ -9,7 +9,7 @@ using Xplan.API.Models;
 
 namespace Xplan.API.Controllers
 {
-    [Authorize]
+    
     public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
@@ -27,6 +27,7 @@ namespace Xplan.API.Controllers
 
         // GET api/users/2
         //[AllowAnonymous]
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetUser(int id) //async Task<IActionResult> GetValue(int id)
         {
