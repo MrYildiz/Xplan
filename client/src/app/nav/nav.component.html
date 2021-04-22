@@ -1,27 +1,29 @@
 <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="#">Xplan</a>
+    <a class="navbar-brand" routerLink='/'>Xplan</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0" *ngIf="accountService.currentUser$ | async">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Afspraak plannen</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Help</a>
-        </li>
-      </ul>
+      <!--<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <ng-container *ngIf="accountService.currentUser$ | async">
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLinkActive='active'>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/customerPanel' routerLinkActive='active'>Afspraak plannen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLinkActive='active'>Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLinkActive='active'>Help</a>
+          </li>
+        </ng-container>
+      </ul>-->
 
-      <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown> <!-- | async om automatisch unsubscribe-->
-        <a class="dropdown-toggle" dropdownToggle>Naam Van Gebruiker</a>
+      <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown> <!-- | async om automatisch unsubscribe-->
+        <a class="dropdown-toggle" dropdownToggle>Welkom {{user.username}}</a>
         <div class="dropdown-menu mt-3" *dropdownMenu>
           <a class="dropdown-item">Mijn Gegevens</a>
           <div class="dropdown-divider"></div>

@@ -1,9 +1,10 @@
+using System.Threading.Tasks;
 using Xplan.API.Models;
 
 namespace Xplan.API.Interfaces
 {
     public interface ITokenService
     {
-         string CreateToken(AppUser user);
+         Task<string> CreateToken(AppUser user);
     }
 }

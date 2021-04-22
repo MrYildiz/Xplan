@@ -1,37 +1,48 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Xplan.API.Data;
+using Xplan.API.DTOs;
 using Xplan.API.Models;
 
 namespace Xplan.API.Controllers
 {
-    
+
     public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
-        public UsersController(DataContext context)
+        private readonly IMapper _mapper;
+        public UsersController(DataContext context, IMapper mapper)
         {
+            _mapper = mapper;
             _context = context;
         }
 
         //[AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers() //async Task<IActionResult> GetValues()
+        public async Task<ActionResult<IEnumerable<InstallerDto>>> GetUsers()
         {
-            return await _context.Users.ToListAsync();
+            var users = await _context.Users.ToListAsync();
+
+            var installersToReturn = _mapper.Map<IEnumerable<InstallerDto>>(users);
+
+            return Ok(installersToReturn);
         }
 
         // GET api/users/2
         //[AllowAnonymous]
-        [Authorize]
+        [Authorize(Roles = "Installer")]
         [HttpGet("{id}")]
-        public async Task<ActionResult<AppUser>> GetUser(int id) //async Task<IActionResult> GetValue(int id)
+        public async Task<ActionResult<InstallerDto>> GetUser(int id)
         {
-            return await _context.Users.FindAsync(id);
+            var user = await _context.Users.FindAsync(id);
+
+            return _mapper.Map<InstallerDto>(user);
         }
 
         // POST api/users
