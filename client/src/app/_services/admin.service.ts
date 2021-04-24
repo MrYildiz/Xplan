@@ -18,7 +18,7 @@ export class AdminService {
   constructor(private http: HttpClient) { }
 
   getInstallers() {
-    return this.http.get<User[]>(this.baseUrl + 'admin/installers', httpOptions); // deze end point moet ik nog maken
+    return this.http.get<User[]>(this.baseUrl + 'admin/installers', httpOptions);
   }
 
   updateInstaller(model: any) {

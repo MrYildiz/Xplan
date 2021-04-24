@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -17,6 +19,8 @@ import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { InstallerPanelComponent } from './installer-panel/installer-panel.component';
 import { RegisterInstallerComponent } from './register-installer/register-installer.component';
 import { UpdateInstallerComponent } from './update-installer/update-installer.component';
+import { FooterComponent } from './footer/footer.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -29,13 +33,16 @@ import { UpdateInstallerComponent } from './update-installer/update-installer.co
     AdminPanelComponent,
     InstallerPanelComponent,
     RegisterInstallerComponent,
-    UpdateInstallerComponent
+    UpdateInstallerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule,
     FormsModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot()

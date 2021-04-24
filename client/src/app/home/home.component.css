@@ -1,7 +1,7 @@
 .container {
-    margin: auto;
+  margin: auto;
   width: 90%;
-  border: 3px solid green;
+  /*border: 3px solid green;*/
   padding: 10px;
 }
 

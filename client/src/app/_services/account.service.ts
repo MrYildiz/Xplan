@@ -17,8 +17,8 @@ const httpOptions = {
 })
 export class AccountService {
   baseUrl = 'https://localhost:5001/api/';
-  private currentUserSource = new ReplaySubject<User>(1); //Dit is om data die je met observable krijgt op te slaan. 1 betekent maar 1 opslaan.
-  currentUser$ = this.currentUserSource.asObservable(); //$ is convention om aan te geven dat iets een observable is.
+  private currentUserSource = new ReplaySubject<User>(1); // is om data die je met observable krijgt op te slaan. 1 betekent maar 1 opslaan.
+  currentUser$ = this.currentUserSource.asObservable(); // $ is convention om aan te geven dat iets een observable is.
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -29,7 +29,7 @@ export class AccountService {
         if (user) {
           this.setCurrentUser(user);
           this.currentUserSource.next(user);
-          this.router.navigate
+          window.location.reload();
         }
       })
     )

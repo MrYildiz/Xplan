@@ -1,15 +1,14 @@
-<p>installer-management werkt</p>
-<div>
-    <tabset>
-      <tab heading="Registreer installateur" id="tab1">Registreer installateur
-        <app-register-installer></app-register-installer>
-      </tab>
-      <tab heading="Alle Installateurs">Lijst met installateurs en daarnaast optie om te wijzigen of verwijderen
-        <ul>
-          <li *ngFor='let user of users'>{{user.username}}</li>
-        </ul>
-      </tab>
-    </tabset>
-  </div>
+<div class="container">
+  <tabset>
+    <tab heading="Registreer installateur" id="tab1">
+      <app-register-installer></app-register-installer>
+    </tab>
+    <tab heading="Alle Installateurs">Lijst met installateurs en daarnaast optie om te wijzigen of verwijderen
+      <ul>
+        <li *ngFor='let user of users'>{{user.username}}</li>
+      </ul>
+    </tab>
+  </tabset>
+</div>
   
 
