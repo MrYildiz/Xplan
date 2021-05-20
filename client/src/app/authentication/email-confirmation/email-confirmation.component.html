@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title">Email Bevestigen</h1>
+
+        <div *ngIf="showError" class="alert alert-danger" role="alert">
+            {{errorMessage}}
+        </div>
+
+        <div *ngIf="showSuccess" class="alert alert-success" role="alert">
+            Je email is bevestigd. Klik  <a [routerLink]="['/authentication/login']"> hier om in te loggen. </a>
+        </div>
+    </div>
+</div>

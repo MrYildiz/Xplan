@@ -23,7 +23,7 @@ namespace Xplan.API.Controllers
         }
 
         //[AllowAnonymous]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<InstallerDto>>> GetUsers()
         {
@@ -36,7 +36,7 @@ namespace Xplan.API.Controllers
 
         // GET api/users/2
         //[AllowAnonymous]
-        [Authorize(Roles = "Installer")]
+        //[Authorize(Roles = "Installer")]
         [HttpGet("{id}")]
         public async Task<ActionResult<InstallerDto>> GetUser(int id)
         {

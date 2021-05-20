@@ -31,7 +31,8 @@
         </div>
       </div>
 
-      <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="form-inline my-2 my-lg-0 ml-auto" (ngSubmit)="login()" autocomplete="off">
+      <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" 
+        class="form-inline my-2 my-lg-0 ml-auto" (ngSubmit)="login()" autocomplete="off">
         <input 
             name="username"
             [(ngModel)]="model.username"
@@ -45,6 +46,10 @@
             type="password" 
             placeholder="Wachtwoord">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-      </form>
+        <br>
+        <div>
+          <a id="passwordForgot" [routerLink]="['/authentication/forgotpassword']"> Wachtwoord Vergeten? </a>
+        </div>
+      </form>      
     </div>
   </nav>

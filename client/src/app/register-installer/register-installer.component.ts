@@ -15,9 +15,11 @@ export class RegisterInstallerComponent implements OnInit {
 
   ngOnInit(): void {
     this.model = {
-      username: "",
-      password: "",
-      role: "Installer"
+      email: '', // email ipv username
+      password: '',
+      //confirmPassword: '',
+      role: 'Installer',
+      clientURI: 'https://localhost:4200/authentication/emailconfirmation'
     };
   }
 /**

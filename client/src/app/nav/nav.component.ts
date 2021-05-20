@@ -10,7 +10,8 @@ import { AccountService } from '../_services/account.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  model: any = {}
+  public loggeddOut = true;
+  model: any = {};
 
   constructor(public accountService: AccountService, private router: Router) { } //deze injectie public anders kan je m niet gebruiken in html van dit component.
 
@@ -20,9 +21,10 @@ export class NavComponent implements OnInit {
   login() {
     this.accountService.login(this.model).subscribe(response => {
       this.router.navigateByUrl('/'); //customerPanel
+      this.loggeddOut = false;
     }, error => {
       console.log(error);
-    })
+    });
   }
 
   logout() {
