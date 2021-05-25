@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { HomeComponent } from './home/home.component';
 import { CustomerPanelComponent } from './customerPanel/customerPanel.component';
@@ -52,6 +54,7 @@ import { ResetPasswordComponent } from './authentication/reset-password/reset-pa
     FormsModule,
     ReactiveFormsModule,
     BsDropdownModule.forRoot(),
+    CollapseModule.forRoot(),
     TabsModule.forRoot()
   ],
   providers: [],

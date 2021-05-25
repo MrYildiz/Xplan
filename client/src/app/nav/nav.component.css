@@ -12,8 +12,43 @@
     color:#FFF;
 }
 
+#button-basic {
+    background-color: transparent;
+    color: black;
+}
+
+#btn-inloggen {
+    background-color: #2c5af1;
+    width: 120px;
+    color: white;
+    margin:10px;
+    text-decoration:none;
+    display: flex;
+    text-align:center;
+}
+
 #passwordForgot {
     color:rgb(26, 22, 22);
     padding-left: 10px;
     text-decoration: underline;
+}
+
+.dropdown-toggle::after {
+    display:none;
+}
+
+.inlog {
+    margin: 10px;
+}
+
+.btn {
+    margin-left: 10px;
+    border-color: rgba(68, 64, 64, 0.644);
+    color: white;
+}
+
+#inloggen-text {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 26px;
 }

@@ -1,26 +1,11 @@
 <nav class="navbar navbar-expand-md navbar-light fixed-top pt-3 pb-2" style="background-color: #e3f2fd;">
     <a class="navbar-brand" routerLink='/'>Xplan</a>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <!--<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <ng-container *ngIf="accountService.currentUser$ | async">
-          <li class="nav-item">
-            <a class="nav-link" href="#" routerLinkActive='active'>Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink='/customerPanel' routerLinkActive='active'>Afspraak plannen</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" routerLinkActive='active'>Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" routerLinkActive='active'>Help</a>
-          </li>
-        </ng-container>
-      </ul>-->
 
       <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown> <!-- | async om automatisch unsubscribe-->
         <a class="dropdown-toggle" dropdownToggle>Welkom {{user.username}}</a>
@@ -31,25 +16,33 @@
         </div>
       </div>
 
-      <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" 
-        class="form-inline my-2 my-lg-0 ml-auto" (ngSubmit)="login()" autocomplete="off">
-        <input 
-            name="username"
-            [(ngModel)]="model.username"
-            class="form-control mr-sm-2" 
-            type="text" 
-            placeholder="Gebruikersnaam">
-        <input 
-            name="password"
-            [(ngModel)]="model.password"
-            class="form-control mr-sm-2" 
-            type="password" 
-            placeholder="Wachtwoord">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-        <br>
-        <div>
-          <a id="passwordForgot" [routerLink]="['/authentication/forgotpassword']"> Wachtwoord Vergeten? </a>
+      <div class="form-inline my-2 my-lg-0 ml-auto" *ngIf="(accountService.currentUser$ | async) === null">
+        <div class="btn-group" dropdown [autoClose]="true" [insideClick]="true">
+          <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+            aria-controls="dropdown-basic">Mijn Xplan <span class="caret"></span>
+          </button>
+          <form #loginForm="ngForm" id="dropdown-basic inloggen-text" *dropdownMenu class="dropdown-menu" (ngSubmit)="login()" autocomplete="off">
+            <a class="dropdown-item" href="#">Inloggen Mijn Xplan</a>
+            <input 
+              name="username"
+              [(ngModel)]="model.username"
+              class="form-control mr-sm-2 inlog" 
+              type="text" 
+              placeholder="E-mailadres">
+            <input 
+              name="password"
+              [(ngModel)]="model.password"
+              class="form-control mr-sm-2 inlog" 
+              type="password" 
+              placeholder="Wachtwoord">
+            <button class="btn btn-outline-success" id="btn-inloggen" type="submit">
+              <mat-icon aria-hidden="false" aria-label="Example home icon" style="margin-right: 5px;">login</mat-icon>Inloggen</button> <!--my-2 my-sm-0 -->
+            <br>
+            <div>
+              <a id="passwordForgot" [routerLink]="['/authentication/forgotpassword']" > Wachtwoord Vergeten? </a>
+            </div>
+          </form>
         </div>
-      </form>      
+      </div>
     </div>
   </nav>
