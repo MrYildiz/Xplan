@@ -40,7 +40,7 @@ export class AccountService {
   }
 
   register(model: any) {
-    return this.http.post(this.baseUrl + 'account/register', model, httpOptions);
+    return this.http.post(this.baseUrl + 'account/registerCustomer', model, httpOptions);
   }
 
   public forgotPassword = (route: string, body: ForgotPasswordDto) => {

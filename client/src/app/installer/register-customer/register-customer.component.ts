@@ -1,15 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { AccountService } from '../../_services/account.service';
+import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/_services/account.service';
 
 @Component({
-  selector: 'app-register-installer',
-  templateUrl: './register-installer.component.html',
-  styleUrls: ['./register-installer.component.css']
+  selector: 'app-register-customer',
+  templateUrl: './register-customer.component.html',
+  styleUrls: ['./register-customer.component.css']
 })
-export class RegisterInstallerComponent implements OnInit {
+export class RegisterCustomerComponent implements OnInit {
   model: any = {};
-  //registerForm: FormGroup;
 
   constructor(private accountService: AccountService) { }
 
@@ -18,19 +16,12 @@ export class RegisterInstallerComponent implements OnInit {
       email: '', // email ipv username
       password: '',
       //confirmPassword: '',
-      role: 'Installer',
+      role: 'Customer',
       clientURI: 'https://localhost:4200/authentication/emailconfirmation'
     };
   }
-/**
- * initializeForm() {
-    this.registerForm = this.fb.group({
 
-    })
-  }
- * 
- */
-  registerInstaller() {
+  registerCustomer() {
     this.accountService.register(this.model).subscribe(response => {
       window.location.reload();
       console.log(response);
@@ -42,6 +33,5 @@ export class RegisterInstallerComponent implements OnInit {
   cancel() {
     console.log('geannuleerd');
   }
-
 
 }

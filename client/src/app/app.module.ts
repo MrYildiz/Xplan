@@ -26,6 +26,11 @@ import { from } from 'rxjs';
 import { EmailConfirmationComponent } from './authentication/email-confirmation/email-confirmation.component';
 import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
+import { AgendaComponent } from './installer/agenda/agenda.component';
+import { CustomerManagementComponent } from './installer/customer-management/customer-management.component';
+import { DashboardComponent } from './installer/dashboard/dashboard.component';
+import { RegisterCustomerComponent } from './installer/register-customer/register-customer.component';
+import { UpdateCustomerComponent } from './installer/update-customer/update-customer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,12 @@ import { ResetPasswordComponent } from './authentication/reset-password/reset-pa
     FooterComponent,
     EmailConfirmationComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    AgendaComponent,
+    CustomerManagementComponent,
+    DashboardComponent,
+    RegisterCustomerComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule,
