@@ -5,7 +5,7 @@ import { EmailConfirmationComponent } from './authentication/email-confirmation/
 import { CustomerPanelComponent } from './customerPanel/customerPanel.component';
 import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
-import { InstallerPanelComponent } from './installer-panel/installer-panel.component';
+import { InstallerPanelComponent } from './installer/installer-panel/installer-panel.component';
 import { AdminGuard } from './_guards/admin.guard';
 import { AuthGuard } from './_guards/auth.guard';
 import { CustomerGuard } from './_guards/customer.guard';

@@ -18,9 +18,9 @@ import { CustomerPanelComponent } from './customerPanel/customerPanel.component'
 import { InstallerManagementComponent } from './admin/installer-management/installer-management.component';
 import { HasRoleDirective } from './_directives/has-role.directive';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
-import { InstallerPanelComponent } from './installer-panel/installer-panel.component';
-import { RegisterInstallerComponent } from './register-installer/register-installer.component';
-import { UpdateInstallerComponent } from './update-installer/update-installer.component';
+import { InstallerPanelComponent } from './installer/installer-panel/installer-panel.component';
+import { RegisterInstallerComponent } from './admin/register-installer/register-installer.component';
+import { UpdateInstallerComponent } from './admin/update-installer/update-installer.component';
 import { FooterComponent } from './footer/footer.component';
 import { from } from 'rxjs';
 import { EmailConfirmationComponent } from './authentication/email-confirmation/email-confirmation.component';

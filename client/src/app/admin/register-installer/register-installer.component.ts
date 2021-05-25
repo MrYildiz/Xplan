@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AccountService } from 'src/app/_services/account.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { AccountService } from '../../_services/account.service';
 
 @Component({
   selector: 'app-register-installer',
@@ -8,6 +9,7 @@ import { AccountService } from 'src/app/_services/account.service';
 })
 export class RegisterInstallerComponent implements OnInit {
   model: any = {};
+  //registerForm: FormGroup;
 
   constructor(private accountService: AccountService) { }
 
@@ -20,7 +22,14 @@ export class RegisterInstallerComponent implements OnInit {
       clientURI: 'https://localhost:4200/authentication/emailconfirmation'
     };
   }
+/**
+ * initializeForm() {
+    this.registerForm = this.fb.group({
 
+    })
+  }
+ * 
+ */
   registerInstaller() {
     this.accountService.register(this.model).subscribe(response => {
       window.location.reload();
@@ -33,5 +42,6 @@ export class RegisterInstallerComponent implements OnInit {
   cancel() {
     console.log('geannuleerd');
   }
+  
 
 }
