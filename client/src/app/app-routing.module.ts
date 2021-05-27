@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { EmailConfirmationComponent } from './authentication/email-confirmation/email-confirmation.component';
-import { CustomerPanelComponent } from './customerPanel/customerPanel.component';
+import { CustomerPanelComponent } from './customer/customerPanel/customerPanel.component';
 import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
 import { InstallerPanelComponent } from './installer/installer-panel/installer-panel.component';

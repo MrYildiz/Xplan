@@ -14,7 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { HomeComponent } from './home/home.component';
-import { CustomerPanelComponent } from './customerPanel/customerPanel.component';
+import { CustomerPanelComponent } from './customer/customerPanel/customerPanel.component';
 import { InstallerManagementComponent } from './admin/installer-management/installer-management.component';
 import { HasRoleDirective } from './_directives/has-role.directive';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
@@ -31,6 +31,10 @@ import { CustomerManagementComponent } from './installer/customer-management/cus
 import { DashboardComponent } from './installer/dashboard/dashboard.component';
 import { RegisterCustomerComponent } from './installer/register-customer/register-customer.component';
 import { UpdateCustomerComponent } from './installer/update-customer/update-customer.component';
+import { UpdateAppointmentComponent } from './customer/update-appointment/update-appointment.component';
+import { UpdateMyDetailsComponent } from './customer/update-my-details/update-my-details.component';
+import { DatePickerComponent } from './installer/date-picker/date-picker.component';
+import { MaterialModule } from './_shared/modules/material.module';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,10 @@ import { UpdateCustomerComponent } from './installer/update-customer/update-cust
     CustomerManagementComponent,
     DashboardComponent,
     RegisterCustomerComponent,
-    UpdateCustomerComponent
+    UpdateCustomerComponent,
+    UpdateAppointmentComponent,
+    UpdateMyDetailsComponent,
+    DatePickerComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +69,7 @@ import { UpdateCustomerComponent } from './installer/update-customer/update-cust
     MatIconModule,
     MatButtonModule,
     FormsModule,
+    MaterialModule,
     ReactiveFormsModule,
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
