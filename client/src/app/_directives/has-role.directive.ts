@@ -2,6 +2,7 @@ import { Directive, Input, OnInit, TemplateRef, ViewContainerRef } from '@angula
 import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
 import { User } from '../_models/user';
+import { UserForRegistrationDto } from '../_models/user/userForRegistrationDto.model';
 import { AccountService } from '../_services/account.service';
 
 @Directive({
@@ -9,10 +10,10 @@ import { AccountService } from '../_services/account.service';
 })
 export class HasRoleDirective implements OnInit {
   @Input() appHasRole: string[];
-  user: User;
+  user: UserForRegistrationDto; // was User
 
   constructor(private viewContainerRef: ViewContainerRef, 
-    private templateRef: TemplateRef<any>, 
+    private templateRef: TemplateRef<any>,
     private accountService: AccountService, private router: Router) {
       this.accountService.currentUser$.pipe(take(1)).subscribe(user => {
         this.user = user;

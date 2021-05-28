@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from './_models/user';
+import { UserForRegistrationDto } from './_models/user/userForRegistrationDto.model';
 import { AccountService } from './_services/account.service';
 
 @Component({
@@ -18,11 +19,10 @@ export class AppComponent implements OnInit {
   }
 
   setCurrentUser() {
-    const user: User = JSON.parse(localStorage.getItem('user'));
+    const user: UserForRegistrationDto = JSON.parse(localStorage.getItem('user')); // was User
     if (user) {
       this.accountService.setCurrentUser(user);
     }
   }
-
 
 }

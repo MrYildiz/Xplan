@@ -22,7 +22,7 @@ export class RegisterCustomerComponent implements OnInit {
   }
 
   registerCustomer() {
-    this.accountService.register(this.model).subscribe(response => {
+    this.accountService.registerCustomer(this.model).subscribe(response => {
       window.location.reload();
       console.log(response);
     }, error => {

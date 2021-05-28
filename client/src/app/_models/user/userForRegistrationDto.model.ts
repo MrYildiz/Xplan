@@ -1,7 +1,7 @@
 export interface UserForRegistrationDto {
     email: string;
     password: "";
-    roles: any;
+    roles: string[];
     clientURI: string;
     token: string;
 

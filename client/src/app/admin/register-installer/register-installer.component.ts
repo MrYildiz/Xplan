@@ -31,7 +31,7 @@ export class RegisterInstallerComponent implements OnInit {
  * 
  */
   registerInstaller() {
-    this.accountService.register(this.model).subscribe(response => {
+    this.accountService.registerInstaller(this.model).subscribe(response => {
       window.location.reload();
       console.log(response);
     }, error => {

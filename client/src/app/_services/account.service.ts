@@ -8,6 +8,7 @@ import { CustomEncoder } from '../_helpers/custom-encoder';
 import { ForgotPasswordDto } from '../_models/resetPassword/forgot-password-dto';
 import { ResetPasswordDto } from '../_models/resetPassword/reset-password-dto';
 import { User } from '../_models/user';
+import { UserForRegistrationDto } from '../_models/user/userForRegistrationDto.model';
 import { EnvironmentUrlService } from './environment-url.service';
 
 const httpOptions = {
@@ -21,14 +22,14 @@ const httpOptions = {
 })
 export class AccountService {
   baseUrl = 'https://localhost:5001/api/';
-  private currentUserSource = new ReplaySubject<User>(1); // is om data die je met observable krijgt op te slaan. 1 betekent maar 1 opslaan.
+  private currentUserSource = new ReplaySubject<UserForRegistrationDto>(1); // was User. / is om data die je met observable krijgt op te slaan. 1 betekent maar 1 opslaan.
   currentUser$ = this.currentUserSource.asObservable(); // $ is convention om aan te geven dat iets een observable is.
 
   constructor(private http: HttpClient, private router: Router, private envUrl: EnvironmentUrlService) { }
 
   login(model: any) {
     return this.http.post(this.baseUrl + 'account/login', model).pipe(
-      map((response: User) => {
+      map((response: UserForRegistrationDto) => { // was User
         const user = response;
         if (user) {
           this.setCurrentUser(user);
@@ -39,7 +40,11 @@ export class AccountService {
     )
   }
 
-  register(model: any) {
+  registerInstaller(model: any) {
+    return this.http.post(this.baseUrl + 'account/register', model, httpOptions);
+  }
+
+  registerCustomer(model: any) {
     return this.http.post(this.baseUrl + 'account/registerCustomer', model, httpOptions);
   }
 
@@ -51,7 +56,7 @@ export class AccountService {
     return this.http.post(this.createCompleteRoute(route, this.envUrl.urlAddress), body);
   }
 
-  setCurrentUser(user: User) {
+  setCurrentUser(user: UserForRegistrationDto) { // User
     user.roles = []; // hoeft geen array te zijn omdat ik waarschijnlijk niet wil dat een user meerdere rollen krijgt. Evt later aanpassen
     const roles = this.getDecodedToken(user.token).role;
     Array.isArray(roles) ? user.roles = roles : user.roles.push(roles); // dit was de implementatie voor user met meerdere rollen. rollen komen dan in een array en ternary operator checkt of het een array is. Dit evt. later aanpassen.
