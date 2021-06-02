@@ -22,13 +22,12 @@ export class RegisterInstallerComponent implements OnInit {
       clientURI: 'https://localhost:4200/authentication/emailconfirmation'
     };
   }
-/**
- * initializeForm() {
-    this.registerForm = this.fb.group({
 
+/**
+ initializeForm() {
+    this.registerForm = this.fb.group({
     })
   }
- * 
  */
   registerInstaller() {
     this.accountService.registerInstaller(this.model).subscribe(response => {
@@ -42,6 +41,5 @@ export class RegisterInstallerComponent implements OnInit {
   cancel() {
     console.log('geannuleerd');
   }
-
 
 }

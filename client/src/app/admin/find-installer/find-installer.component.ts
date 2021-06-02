@@ -44,9 +44,9 @@ export class FindInstallerComponent implements OnInit {
         username: '',
         available: []
       };
+      window.location.reload();
     });
   }
-
 
   cancel() {
     console.log('geannuleerd');

@@ -31,13 +31,12 @@ export class AdminService {
   }
 
   deleteInstaller(id: string) {
-    return this.http.delete('https://localhost:5001/api/users/' + id, httpOptions); // deze end point moet ik nog maken
+    return this.http.delete('https://localhost:5001/api/users/' + id, httpOptions);
   }
 
   getUsers() {
     return this.http.get('https://localhost:5001/api/users', httpOptions);
     //return this.http.get('https://localhost:5001/api/users').subscribe(users => this.users = users); 
-    //console.log(this.users);
     //aanpassen als end point klaar is naar alleen installers + gebruik admin.service
   }
 
@@ -45,5 +44,4 @@ export class AdminService {
     localStorage.setItem('foundInstaller', JSON.stringify(foundInstaller));
   }
 
- 
 }

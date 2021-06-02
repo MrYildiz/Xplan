@@ -42,6 +42,7 @@ export class UpdateInstallerComponent implements OnInit {
   }
 
   cancel() {
+    window.location.reload();
     console.log('geannuleerd');
   }
 
