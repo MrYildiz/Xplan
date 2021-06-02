@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Installer } from '../_models/installer';
 import { User } from '../_models/user';
 
 const httpOptions = {
@@ -18,15 +19,19 @@ export class AdminService {
   constructor(private http: HttpClient) { }
 
   getInstallers() {
-    return this.http.get<User[]>(this.baseUrl + 'admin/installers', httpOptions);
+    return this.http.get<Installer[]>(this.baseUrl + 'admin/installers', httpOptions);
   }
 
-  updateInstaller(model: any) {
-    return this.http.post(this.baseUrl + 'admin/update-installer', model); // deze end point moet ik nog maken
+  getInstaller(username: string) {
+    return this.http.get<Installer>(this.baseUrl + 'users/' + username, httpOptions);
   }
 
-  deleteInstaller(model: any) {
-    return this.http.post(this.baseUrl + 'admin/delete-installer', model); // deze end point moet ik nog maken
+  updateInstaller(installer: Installer) {
+    return this.http.put(this.baseUrl + 'users', installer, httpOptions);
+  }
+
+  deleteInstaller(id: string) {
+    return this.http.delete('https://localhost:5001/api/users/' + id, httpOptions); // deze end point moet ik nog maken
   }
 
   getUsers() {
@@ -35,5 +40,10 @@ export class AdminService {
     //console.log(this.users);
     //aanpassen als end point klaar is naar alleen installers + gebruik admin.service
   }
+
+  setFoundInstaller(foundInstaller: Installer) {
+    localStorage.setItem('foundInstaller', JSON.stringify(foundInstaller));
+  }
+
  
 }

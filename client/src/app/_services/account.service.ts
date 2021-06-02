@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { HomeComponent } from '../home/home.component';
 import { CustomEncoder } from '../_helpers/custom-encoder';
 import { ForgotPasswordDto } from '../_models/resetPassword/forgot-password-dto';
@@ -21,14 +22,14 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AccountService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = environment.urlAddress;
   private currentUserSource = new ReplaySubject<UserForRegistrationDto>(1); // was User. / is om data die je met observable krijgt op te slaan. 1 betekent maar 1 opslaan.
   currentUser$ = this.currentUserSource.asObservable(); // $ is convention om aan te geven dat iets een observable is.
 
   constructor(private http: HttpClient, private router: Router, private envUrl: EnvironmentUrlService) { }
 
   login(model: any) {
-    return this.http.post(this.baseUrl + 'account/login', model).pipe(
+    return this.http.post(this.baseUrl + '/api/account/login', model).pipe(
       map((response: UserForRegistrationDto) => { // was User
         const user = response;
         if (user) {
@@ -41,11 +42,11 @@ export class AccountService {
   }
 
   registerInstaller(model: any) {
-    return this.http.post(this.baseUrl + 'account/register', model, httpOptions);
+    return this.http.post(this.baseUrl + '/api/account/register', model, httpOptions);
   }
 
   registerCustomer(model: any) {
-    return this.http.post(this.baseUrl + 'account/registerCustomer', model, httpOptions);
+    return this.http.post(this.baseUrl + '/api/account/registerCustomer', model, httpOptions);
   }
 
   public forgotPassword = (route: string, body: ForgotPasswordDto) => {

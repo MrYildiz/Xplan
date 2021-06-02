@@ -28,13 +28,16 @@ import { ForgotPasswordComponent } from './authentication/forgot-password/forgot
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
 import { AgendaComponent } from './installer/agenda/agenda.component';
 import { CustomerManagementComponent } from './installer/customer-management/customer-management.component';
-import { DashboardComponent } from './installer/dashboard/dashboard.component';
 import { RegisterCustomerComponent } from './installer/register-customer/register-customer.component';
 import { UpdateCustomerComponent } from './installer/update-customer/update-customer.component';
 import { UpdateAppointmentComponent } from './customer/update-appointment/update-appointment.component';
 import { UpdateMyDetailsComponent } from './customer/update-my-details/update-my-details.component';
 import { DatePickerComponent } from './installer/date-picker/date-picker.component';
 import { MaterialModule } from './_shared/modules/material.module';
+import { FindInstallerComponent } from './admin/find-installer/find-installer.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { InstallerDashboardComponent } from './installer/installer-dashboard/installer-dashboard.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -54,12 +57,14 @@ import { MaterialModule } from './_shared/modules/material.module';
     ResetPasswordComponent,
     AgendaComponent,
     CustomerManagementComponent,
-    DashboardComponent,
     RegisterCustomerComponent,
     UpdateCustomerComponent,
     UpdateAppointmentComponent,
     UpdateMyDetailsComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    FindInstallerComponent,
+    AdminDashboardComponent,
+    InstallerDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +78,8 @@ import { MaterialModule } from './_shared/modules/material.module';
     ReactiveFormsModule,
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

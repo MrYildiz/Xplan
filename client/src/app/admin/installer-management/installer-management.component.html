@@ -1,12 +1,23 @@
 <div class="container">
   <tabset>
-    <tab heading="Registreer installateur" id="tab1">
+    <tab heading="Dashboard" id="tab1">
+      <app-admin-dashboard></app-admin-dashboard>
+    </tab>
+    <tab heading="Registreer installateur" id="tab2">
       <app-register-installer></app-register-installer>
     </tab>
-    <tab heading="Alle Installateurs">Lijst met installateurs en daarnaast optie om te wijzigen of verwijderen
-      <ul>
-        <li *ngFor='let user of users'>{{user.username}}</li>
-      </ul>
+    <tab heading="Alle Installateurs" id="tab3"><strong>====Deze tab kan waarschijnlijk weg==========</strong><br>Lijst met installateurs en daarnaast optie om te wijzigen of verwijderen
+      <div class="row">
+        <div class="col-2">Id
+          <p *ngFor='let installer of installers'>{{installer.id}}</p>
+        </div>
+        <div class="col-2">Gebruikersnaam
+          <p *ngFor='let installer of installers'>{{installer.username}}</p>
+        </div>
+      </div>
+    </tab>
+    <tab heading="Wijzig installateur" id="tab4">
+      <app-find-installer></app-find-installer>
     </tab>
   </tabset>
 </div>

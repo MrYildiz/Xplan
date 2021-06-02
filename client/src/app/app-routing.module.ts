@@ -11,6 +11,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { CustomerGuard } from './_guards/customer.guard';
 import { InstallerGuard } from './_guards/installer.guard';
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
+import { UpdateInstallerComponent } from './admin/update-installer/update-installer.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,6 +21,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
+      {path: 'update/installer', component: UpdateInstallerComponent, canActivate: [AdminGuard]},
+      //{path: 'installer/wijzig', component: UpdateInstallerComponent, canActivate: [AdminGuard]},
       //{path: 'installer', component: InstallerPanelComponent, canActivate: [InstallerGuard]},
       //{path: 'customerPanel', component: CustomerPanelComponent, canActivate: [CustomerGuard]},
     ]

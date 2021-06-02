@@ -1,0 +1,16 @@
+.card-body {
+    padding: 0 25px;
+}
+
+.card-footer {
+    padding: 25px 25px;
+    background-color: #fff;
+    border-top: none;
+}
+
+.confirmButton {
+    background-color: black; 
+    color: white;
+    margin-right: 8px;
+}
+

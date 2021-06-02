@@ -1,5 +1,5 @@
 export interface InstallerAvailable {
     installerId: number;
-    dateFrom: Date;
-    dateTo: Date;
+    date: Date;
+    //dateTo: Date;
 }
