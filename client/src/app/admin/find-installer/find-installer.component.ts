@@ -24,7 +24,7 @@ export class FindInstallerComponent implements OnInit {
       id: null,
       email: '',
       username: '',
-      available: []
+      availables: []
     };
   }
 
@@ -42,7 +42,7 @@ export class FindInstallerComponent implements OnInit {
         id: null,
         email: '',
         username: '',
-        available: []
+        availables: []
       };
       window.location.reload();
     });

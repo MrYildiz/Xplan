@@ -29,7 +29,7 @@ export class AccountService {
   constructor(private http: HttpClient, private router: Router, private envUrl: EnvironmentUrlService) { }
 
   login(model: any) {
-    return this.http.post(this.baseUrl + '/api/account/login', model).pipe(
+    return this.http.post(this.baseUrl + '/account/login', model).pipe(
       map((response: UserForRegistrationDto) => { // was User
         const user = response;
         if (user) {
@@ -38,15 +38,15 @@ export class AccountService {
           window.location.reload();
         }
       })
-    )
+    );
   }
 
   registerInstaller(model: any) {
-    return this.http.post(this.baseUrl + '/api/account/register', model, httpOptions);
+    return this.http.post(this.baseUrl + '/account/register', model, httpOptions);
   }
 
   registerCustomer(model: any) {
-    return this.http.post(this.baseUrl + '/api/account/registerCustomer', model, httpOptions);
+    return this.http.post(this.baseUrl + '/account/registerCustomer', model, httpOptions);
   }
 
   public forgotPassword = (route: string, body: ForgotPasswordDto) => {
@@ -79,7 +79,7 @@ export class AccountService {
     let params = new HttpParams({ encoder: new CustomEncoder() });
     params = params.append('token', token);
     params = params.append('email', email);
-  
+
     return this.http.get(this.createCompleteRoute(route, this.envUrl.urlAddress), { params: params });
   }
 

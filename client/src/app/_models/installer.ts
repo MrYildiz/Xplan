@@ -7,5 +7,5 @@ export interface Installer {
     email: string;
     phoneNumber?: any;
     installations?: any;
-    available: InstallerAvailable[]; //any[]
+    availables: InstallerAvailable[]; //any[]
 }

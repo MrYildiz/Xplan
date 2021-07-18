@@ -51,7 +51,7 @@ export class ResetPasswordComponent implements OnInit {
       confirmPassword: resetPass.confirm,
       token: this._token,
       email: this._email
-    }
+    };
 
     this.accountService.resetPassword('api/account/resetpassword', resetPassDto)
     .subscribe(_ => {

@@ -38,6 +38,7 @@ import { FindInstallerComponent } from './admin/find-installer/find-installer.co
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { InstallerDashboardComponent } from './installer/installer-dashboard/installer-dashboard.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AgendaCustomerComponent } from './customer/agenda-customer/agenda-customer.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { ToastrModule } from 'ngx-toastr';
     DatePickerComponent,
     FindInstallerComponent,
     AdminDashboardComponent,
-    InstallerDashboardComponent
+    InstallerDashboardComponent,
+    AgendaCustomerComponent
   ],
   imports: [
     BrowserModule,

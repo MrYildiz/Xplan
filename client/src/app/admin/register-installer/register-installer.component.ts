@@ -23,12 +23,6 @@ export class RegisterInstallerComponent implements OnInit {
     };
   }
 
-/**
- initializeForm() {
-    this.registerForm = this.fb.group({
-    })
-  }
- */
   registerInstaller() {
     this.accountService.registerInstaller(this.model).subscribe(response => {
       window.location.reload();

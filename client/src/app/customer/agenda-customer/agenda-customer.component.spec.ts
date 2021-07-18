@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AgendaComponent } from './agenda.component';
+import { AgendaCustomerComponent } from './agenda-customer.component';
 
-describe('AgendaComponent', () => {
-  let component: AgendaComponent;
-  let fixture: ComponentFixture<AgendaComponent>;
+describe('AgendaCustomerComponent', () => {
+  let component: AgendaCustomerComponent;
+  let fixture: ComponentFixture<AgendaCustomerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AgendaComponent ]
+      declarations: [ AgendaCustomerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AgendaComponent);
+    fixture = TestBed.createComponent(AgendaCustomerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

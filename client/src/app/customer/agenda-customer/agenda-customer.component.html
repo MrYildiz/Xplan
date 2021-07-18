@@ -1,9 +1,21 @@
+<!-- 
+<div><strong>====Lijst met beschikbaarheid==========</strong><br>Beschikbaar
+    <div class="row">
+      <div class="col-2">Id
+        <p *ngFor='let available of availables'>{{available.id}}</p>
+      </div>
+      <div class="col-2">Datum
+        <p *ngFor='let available of availables'>{{available.date}}</p>
+      </div>
+    </div>
+</div>
+-->
+
 <div id="datepck">
     <h5>Selecteer beschikbare periode</h5>
-    <form (ngSubmit)="makeAvailable()"> <!--[formGroup]="form"-->
+    <form > <!--[formGroup]="form"--> <!--(ngSubmit)="getInstallerAvailables()"-->
         <mat-form-field>
-            <input name="date"
-            [(ngModel)]="model.date" matInput [matDatepicker]="picker" placeholder="Selecteer een dag" readonly> <!--id="date" [formControl]="dateFromForm" -->
+            <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" placeholder="Selecteer een dag"> <!--id="date" [formControl]="dateFromForm" --> <!--readonly-->
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker ></mat-datepicker> <!--[opened]="true" -->
         </mat-form-field>
@@ -24,4 +36,3 @@
             </mat-date-range-input>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-date-range-picker #picker></mat-date-range-picker> -->
-

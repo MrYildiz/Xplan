@@ -1,4 +1,4 @@
-export interface UserForRegistrationDto {
+export interface customerForRegistrationDto {
     createdByInstaller: number;
     email: string;
     password: "";
